@@ -12,18 +12,30 @@ const SidebarToggle = ({ children }) => {
 
   return (
     <aside className="h-screen fixed">
-      <nav className="h-full flex flex-col bg-component shadow-md">
-        <div className="pl-4 py-6 flex justify-between items-center gap-1">
-          <Image 
-            src="/logoipsum.svg" 
-            width={120} 
-            height={100} 
-            alt="" 
-            className={`overflow-hidden transition-all
-            ${expanded ? ' w-44 pr-4' : 'w-0'}`}
+      <nav className="h-full flex flex-col bg-component shadow-md shadow-teal-400">
+        <div className="py-6 pl-3 flex justify-between items-center">
+          {expanded ? (
+            <Image
+              src="/logoipsum.svg" 
+              width={120} 
+              height={100} 
+              alt="" 
+              className={`overflow-hidden transition
+              ${expanded ? ' w-44' : 'w-0'}`}
             />
+            ) : (
+              <Image
+                src="/logoipsum1.svg" 
+                width={120} 
+                height={100} 
+                alt="" 
+                className={`overflow-hidden transition
+                ${expanded ? ' w-0 pr-0' : 'w-8'}`}
+              />
+            )}
 
-          <button onClick={() => setExpanded(prev => !prev)} className="p-1.5 rounded-lg bg-gray-700 hover:opacity-80 absolute right-2">
+          <button onClick={() => setExpanded(prev => !prev)} 
+            className='p-1.5 bg-gray-700 hover:opacity-80 absolute -right-9 rounded-e-lg'>
             {expanded 
               ? <AiOutlineArrowLeft size={24} />
               : <AiOutlineArrowRight size={24}/>

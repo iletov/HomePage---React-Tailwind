@@ -1,5 +1,5 @@
 import React from 'react'
-import SidebarToggle, { SidebarItem } from '../SidebarToggle'
+import SidebarToggle, { SidebarItem } from './SidebarToggle'
 import { GiOpenTreasureChest, GiSettingsKnobs, GiHelp } from "react-icons/gi";
 import { RxDashboard } from "react-icons/rx";
 import { TbTournament } from "react-icons/tb";

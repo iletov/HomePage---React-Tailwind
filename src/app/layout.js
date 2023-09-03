@@ -1,6 +1,5 @@
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
-import SideBar from "./components/SideBar";
 import SideNav from "./components/SideBar/SideNav";
 import SmallNav from "./components/SmallNav";
 import "./globals.css";
