@@ -1,7 +1,8 @@
+import Context, { SideBarContext } from "@/context/Context";
 import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Navbar/NavBar";
 import SideNav from "./components/SideBar/SideNav";
-import SmallNav from "./components/SmallNav";
+import SmallNav from "./components/Navbar/SmallNav";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -13,19 +14,21 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="h-screen flex">
-          {/* <SideBar /> */}
-          <SideNav/>
-          <div className="w-screen">
-            <SmallNav />
-            <NavBar />
-            {children}
-            <Footer />
+        <Context>
+          <div className="h-screen flex">
+            <SideNav />
+            <div className="w-screen">
+                <SmallNav />
+                <NavBar />
+              {children}
+              <Footer />
+            </div>
           </div>
-        </div>
+        </Context>
       </body>
     </html>
   );

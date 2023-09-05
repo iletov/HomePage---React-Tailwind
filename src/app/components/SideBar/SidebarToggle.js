@@ -1,18 +1,17 @@
 'use client'
 import Image from "next/image";
-import React, { createContext, useContext, useState } from "react";
+import React, { useContext } from "react";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { SideBarContext } from '@/context/Context'
 import Link from "next/link";
 
-const SideBarContext = createContext()
-
 const SidebarToggle = ({ children }) => {
-  const [expanded, setExpanded] = useState(true);
+  const { expanded, toggle } = useContext(SideBarContext)
 
   return (
-    <aside className="h-screen fixed">
-      <nav className="h-full flex flex-col bg-component shadow-md shadow-teal-400">
+    <aside className='h-screen fixed z-30'>
+      <nav className="h-full flex flex-col bg-component shadow-xl shadow-black">
         <div className="py-6 pl-3 flex justify-between items-center">
           {expanded ? (
             <Image
@@ -34,20 +33,17 @@ const SidebarToggle = ({ children }) => {
               />
             )}
 
-          <button onClick={() => setExpanded(prev => !prev)} 
-            className='p-1.5 bg-gray-700 hover:opacity-80 absolute -right-9 rounded-e-lg'>
+          <button onClick={toggle} 
+            className='p-1.5 bg-gray-700 hover:opacity-80 absolute -right-9 bottom-8 rounded-e-lg'>
             {expanded 
               ? <AiOutlineArrowLeft size={24} />
               : <AiOutlineArrowRight size={24}/>
             }
           </button>
         </div>
-        
-        <SideBarContext.Provider value={{expanded}}>
           <div className="flex-1 pl-3">
             {children}
           </div>
-        </SideBarContext.Provider>
       </nav>
     </aside>
   );

@@ -1,15 +1,22 @@
 import { BiSolidGame } from "react-icons/bi";
-import GlowCards from "./components/GlowCards";
-import LargeCards from "./components/LargeCards";
+
 import Header from "./components/Header";
+import GlowCards from "./components/Cards/GlowCards";
+import LargeCards from "./components/Cards/LargeCards";
+import CardContainer from "./components/Cards/CardContainer";
+import HeroBanner from "./components/HeroBanner";
+
+
 
 
 export default function Home() {
+
   return (
-    <div className="bg-background text-slate-100 flex-grow p-4 pl-[21%] pt-[9%]">
+    <CardContainer>
+      <HeroBanner/>
       <Header icon={BiSolidGame} iconSize={24} custom='text-teal-400' title={'Card Component'}/>
       <GlowCards />
       <LargeCards />
-    </div>
+    </CardContainer>
   );
 }

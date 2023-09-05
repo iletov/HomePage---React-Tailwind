@@ -30,21 +30,21 @@ export const smallCard = [
 export const midCard = [
   { 
     id: 1, 
-    title: "Deposit Now",
-    desc: 'Shut up and take my money',
-    image: '/money.png' 
+    title: "Join Now",
+    desc: 'Win up 5000 Something daily on our 10k Daily Race',
+    image: '/csgo.png' 
   },
   { 
     id: 2, 
     title: "Tournament",
     desc: 'For the win',
-    image: '/win.png' 
+    image: '/csgo2.png' 
   },
-  { 
-    id: 3, 
-    title: "Treasure Hunt",
-    desc: 'Collect your reward',
-    image: '/treasure.png' 
-  },
-
 ];
+
+export const Hero = {
+    title: "Play your way experience of gaming",
+    desc: "Duis amet nostrud Lorem qui nisi ex labore cupidatat.",
+    image: "/csgo3.png"
+  }
+

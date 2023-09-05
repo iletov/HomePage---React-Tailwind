@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import BlurEffect from "../BlurEffect";
 
 const CardBorderFill = ({data}) => {
   return (
@@ -28,13 +29,14 @@ const CardBorderFill = ({data}) => {
 
       {/* CARD TITLE */}
       <div className=" relative">
-        <div className="w-full mt-5 text-left text-white uppercase font-semibold text-lg">
+        <div className=" absolute bottom-0 w-full mt-5 text-center z-10 text-white uppercase font-semibold text-sm md:text-base">
           {data.title}
         </div>
       </div>
 
       {/* BOTTOM GLOW */}
-      <div className=" absolute w-full left-0 bottom-0 h-32 bg-gradient-to-b from-teal-400/0 via-teal-400/20 via-teal-/30 to-teal-400/60 group-hover:block transition-all duration-200 hidden  rounded-b-md"></div>
+      <BlurEffect bgColor={'from-[#202124]/0 via-[#202124]/60 to-[#202124]/100'} height={'h-32'}/>
+      <BlurEffect hidden={true} bgColor={'from-teal-400/0 via-teal-400/20 to-teal-400/60'} height={'h-32'}/>
     </div>
     </div>
 
