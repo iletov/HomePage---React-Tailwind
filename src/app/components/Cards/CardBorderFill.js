@@ -4,14 +4,14 @@ import BlurEffect from "../BlurEffect";
 
 const CardBorderFill = ({data}) => {
   return (
-    <div className="flex flex-col gap-5 relative group ">
+    <div className="flex flex-col gap-0 relative group">
     
     {/* GLOW EFFECT */}
     <div className="absolute inset-0 bg-teal-400 rounded-xl opacity-60 group-hover:-inset-1 group-hover:blur transition duration-100"></div>
     
     {/* CARD WRAPPER */}
     <div className="
-        col-span-1 p-6 cursor-pointer rounded-md 
+        col-span-1 p-2 cursor-pointer rounded-md 
         text-center text-sm relative
          bg-gradient-to-b from-[#303134] to-[#1F2225]   
         "

@@ -10,9 +10,31 @@ const SidebarToggle = ({ children }) => {
   const { expanded, toggle } = useContext(SideBarContext)
 
   return (
-    <aside className='h-screen fixed z-30'>
+    <>
+
+    <aside className='h-screen fixed z-30 block sm:hidden'>
       <nav className="h-full flex flex-col bg-component shadow-xl shadow-black">
         <div className="py-6 pl-3 flex justify-between items-center">
+            <Image
+              src="/logoipsum1.svg" 
+              width={120} 
+              height={100} 
+              alt="" 
+              className={`overflow-hidden transition w-8`}
+            />
+        </div>
+          <div className="flex-1 pl-3">
+            {children}
+          </div>
+      </nav>
+    </aside>
+   
+
+    {/* ------------------------------------------------ */}
+    <aside className='h-screen fixed z-30 hidden sm:block'>
+      <nav className="h-full flex flex-col bg-component shadow-xl shadow-black">
+        <div className="py-6 pl-3 flex justify-between items-center">
+    
           {expanded ? (
             <Image
               src="/logoipsum.svg" 
@@ -34,7 +56,7 @@ const SidebarToggle = ({ children }) => {
             )}
 
           <button onClick={toggle} 
-            className='p-1.5 bg-gray-700 hover:opacity-80 absolute -right-9 bottom-8 rounded-e-lg'>
+            className='hidden sm:block p-1.5 bg-[#515659] hover:opacity-80 absolute -right-9 bottom-8 rounded-e-lg'>
             {expanded 
               ? <AiOutlineArrowLeft size={24} />
               : <AiOutlineArrowRight size={24}/>
@@ -46,6 +68,8 @@ const SidebarToggle = ({ children }) => {
           </div>
       </nav>
     </aside>
+    </>
+
   );
 };
 
@@ -55,7 +79,19 @@ export const SidebarItem = ({icon, text}) => {
   const { expanded } = useContext(SideBarContext)
 
   return (
-    <Link href={'#'} className=" hover:text-teal-400 relative gap-3 text-slate-100 flex items-center py-2 px-1 my-1 font-medium cursor-pointer group">
+    <>
+
+    <Link href={'#'} className=" hover:text-teal-400 relative gap-3 text-slate-100 flex sm:hidden items-center py-2 px-1 my-1 font-medium cursor-pointer group">
+      {icon}
+      <span
+        className={`transition-all overflow-hidden w-0 
+        `}
+      >
+        {text}
+      </span>
+    </Link>
+
+    <Link href={'#'} className=" hover:text-teal-400 relative gap-3 text-slate-100 hidden sm:flex items-center py-2 px-1 my-1 font-medium cursor-pointer group">
       {icon}
       <span
         className={`transition-all overflow-hidden 
@@ -78,6 +114,7 @@ export const SidebarItem = ({icon, text}) => {
         </div>
       )} */}
     </Link>
+    </>
   )
 }
 
