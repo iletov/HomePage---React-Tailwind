@@ -3,16 +3,17 @@ import React from 'react'
 import Button from './Button'
 import BlurEffect from './BlurEffect'
 import { Hero } from '../dummyData'
-import Link from 'next/link'
 
-const data = Hero
+
+const data = Hero;
 
 const HeroBanner = () => {
 
   return (
-    <div className="flex relative gap-5 mb-5">
+    <div className="flex relative mb-5">
 
-      <div className=" rounded-md text-center w-full h-64 flex flex-col pl-4 bg-teal-400">
+      <div className={` bg-center bg-[url('/tealbg.jpg')] 
+        rounded-md text-center w-full h-64 flex flex-col pl-4`}>
         <div className=" w-1/3 md:w-2/3 lg:w-2/4 px-0 ml-2 my-10 h-full self-start flex flex-col justify-around items-center">
 
           {/* TITLE */}
@@ -20,7 +21,7 @@ const HeroBanner = () => {
             {data.title}
           </div>
           {/* DESC */}
-          <div className=" hidden sm:block sm:text-sm sm:font-extralight text-[#1F2225] capitalize">
+          <div className=" hidden sm:block sm:text-sm sm:font-light text-white capitalize">
             {data.desc}
           </div>
 
@@ -39,7 +40,7 @@ const HeroBanner = () => {
             className="w-full h-full "
           />
         </div>
-        <BlurEffect height={' h-24'} bgColor={'from-teal-400/0 via-teal-400/80 to-teal-400/100'} />
+        <BlurEffect height={' h-24'} bgColor={'from-[#54A2AE]/0 via-[#54A2AE]/80 to-[#54A2AE]/100'} />
       </div>
 
     </div>
