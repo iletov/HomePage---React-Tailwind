@@ -38,7 +38,7 @@ const Footer = () => {
               adipisicing. Nostrud esse culpa labore ipsum ad sint sit. Proident
               mollit eu quis eiusmod. Proident mollit eu quis eiusmod.
             </p>
-            <p>&copy; {new Date().getFullYear()} E~Shop. All rights reserved</p>
+            <p>&copy; {new Date().getFullYear()} All rights reserved</p>
           </div>
         </div>
       </footer>
